@@ -32,7 +32,12 @@ const FilterBox = () => {
     setSelectedOption(value);
     setSortField(value);
   };
-  
+  const handleReset=()=>{
+    setNameInput('');
+    setSelectedOption('Release Date');
+    setDefault();
+    
+  }
   return (
     <div className="bg-card-bg px-4 py-3 sticky top-32">
       <h1 className="mb-8 text-text-headings text-lg font-medium">
@@ -85,7 +90,7 @@ const FilterBox = () => {
         <button
             type='button'
             className='bg-[#5692e8] text-white p-2 mt-4 rounded'
-            onClick={()=>setDefault}
+            onClick={handleReset}
           >
             Clear
           </button>
