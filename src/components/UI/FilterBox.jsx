@@ -10,7 +10,8 @@ const FilterBox = () => {
     sortField, 
     setSortField, 
     sortOrder, 
-    setSortOrder 
+    setSortOrder,
+    setDefault,
   } = useContext(GameListContext);
 
   const [nameInput, setNameInput] = useState(nameFilter);
@@ -31,7 +32,7 @@ const FilterBox = () => {
     setSelectedOption(value);
     setSortField(value);
   };
-
+  
   return (
     <div className="bg-card-bg px-4 py-3 sticky top-32">
       <h1 className="mb-8 text-text-headings text-lg font-medium">
@@ -81,6 +82,13 @@ const FilterBox = () => {
             </select>
           </div>
         </div>
+        <button
+            type='button'
+            className='bg-[#5692e8] text-white p-2 mt-4 rounded'
+            onClick={()=>setDefault}
+          >
+            Clear
+          </button>
       </div>
     </div>
   );

@@ -25,7 +25,12 @@ const GameListProvider = ({ children }) => {
       console.error('Error fetching game data:', error);
     }
   };
-
+ const setDefault=()=>{
+  setNameFilter("");
+  setSortField('firstReleaseDate');
+  setPage(1);
+  setSortOrder('asc')
+ }
   useEffect(() => {
     fetchGameData();
   }, [page, pageSize, nameFilter, sortField, sortOrder]);
@@ -44,6 +49,7 @@ const GameListProvider = ({ children }) => {
         setSortField,
         sortOrder,
         setSortOrder,
+        setDefault,
       }}
     >
       {children}
