@@ -15,7 +15,7 @@ const FilterBox = () => {
   } = useContext(GameListContext);
 
   const [nameInput, setNameInput] = useState(nameFilter);
-  const debouncedNameFilter = useDebounce(nameInput, 500);
+  const debouncedNameFilter = useDebounce(nameInput, 2000);
 
   useEffect(() => {
     setNameFilter(debouncedNameFilter);
