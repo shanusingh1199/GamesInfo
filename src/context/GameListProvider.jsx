@@ -12,7 +12,7 @@ const GameListProvider = ({ children }) => {
 
   const fetchGameData = async () => {
     try {
-      const response = await axios.get('https://spa.api.logicloop.io/api/games', {
+      const response = await axios.get(import.meta.env.VITE_API_URL, {
         params: {
           'pagination[page]': page,
           'pagination[pageSize]': pageSize,
